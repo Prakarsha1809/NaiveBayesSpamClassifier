@@ -267,8 +267,8 @@ predata_test.head()
 
 # In[ ]:
 
-
 # method 1 classifier without cross validation
+
 count=CountVectorizer(max_features=8000)
 tfidf=TfidfTransformer()
 train_fet=tfidf.fit_transform(count.fit_transform(predata_train.values))
@@ -331,7 +331,7 @@ else:
     n=print("\n\nThe given email is predicted to be Legitimate.")
     n
 
-
+'''
 # In[ ]:
 
 
@@ -385,7 +385,7 @@ if rels=='1':
     print("\n\nThe given email is predicted to be Fraud.")
 else:
     print("\n\nThe given email is predicted to be Legitimate.")
-
+'''
 
 # In[ ]:
 
@@ -414,8 +414,8 @@ def ex(p):
         
     egs=preprocess(p)
     example=[egs]
-    #example_counts = tfidf.transform(count.transform(example))
-    predictions = clf.predict(example)
+    example_counts = tfidf.transform(count.transform(example))
+    predictions = classifier.predict(example)
                                  
     if predictions==1:
         messagebox.showinfo("Prediction","              FRAUD!                 ")
