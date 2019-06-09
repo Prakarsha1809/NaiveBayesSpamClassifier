@@ -331,61 +331,61 @@ else:
     n=print("\n\nThe given email is predicted to be Legitimate.")
     n
 
-'''
-# In[ ]:
 
+## In[ ]:
+#
+#
+##method 2 classfier with cross validtion of 10 folds
+#text_clf = Pipeline([('vect', CountVectorizer()),
+#                     ('tfidf', TfidfTransformer()),
+#                     ('clf', MultinomialNB())])
+#tuned_parameters = {
+#    'vect__ngram_range': [(1, 1), (1, 2), (2, 2)],
+#    'tfidf__use_idf': (True, False),
+#    'tfidf__norm': ('l1', 'l2'),
+#    'clf__alpha': [1, 1e-1, 1e-2]
+#}
+#
+#
+## In[ ]:
+#
+#
+#clf = GridSearchCV(text_clf, tuned_parameters, cv=10)
+#clf.fit(predata_train.values, y_train.values)
+#
+#
+#print(classification_report(y_test.values, clf.predict(predata_test.values), digits=4))
+#
+#
+## In[ ]:
+#
+#
+#rel=clf.predict(predata_test.values)
+#print("Accuracy of our Naive Bayes model:",metrics.accuracy_score(rel, y_test)*100,'%')
+#
+#
+## In[ ]:
+#
+#
+#cm = confusion_matrix(y_test, rel)
+#print("No. of Actual Legitimate & Predicted as Legitimate emails: ",cm[0][0])
+#print("No. of Actual Legitimate & Predicted as Fraud emails: ",cm[0][1])
+#print("No. of Actual Fraud & Predicted  as Legitimate emails: ",cm[1][0])
+#print("No. of Actual Fraud & Predicted as Fraud emails: ",cm[1][1])
+#
+#
+## In[ ]:
+#
+#
+#examples = str(input("Enter the email to classify:"))
+#egs=preprocess(examples)
+#example=[egs]
+#rels=clf.predict(example)
+#if rels=='1':
+#    print("\n\nThe given email is predicted to be Fraud.")
+#else:
+#    print("\n\nThe given email is predicted to be Legitimate.")
 
-#method 2 classfier with cross validtion of 10 folds
-text_clf = Pipeline([('vect', CountVectorizer()),
-                     ('tfidf', TfidfTransformer()),
-                     ('clf', MultinomialNB())])
-tuned_parameters = {
-    'vect__ngram_range': [(1, 1), (1, 2), (2, 2)],
-    'tfidf__use_idf': (True, False),
-    'tfidf__norm': ('l1', 'l2'),
-    'clf__alpha': [1, 1e-1, 1e-2]
-}
-
-
-# In[ ]:
-
-
-clf = GridSearchCV(text_clf, tuned_parameters, cv=10)
-clf.fit(predata_train.values, y_train.values)
-
-
-print(classification_report(y_test.values, clf.predict(predata_test.values), digits=4))
-
-
-# In[ ]:
-
-
-rel=clf.predict(predata_test.values)
-print("Accuracy of our Naive Bayes model:",metrics.accuracy_score(rel, y_test)*100,'%')
-
-
-# In[ ]:
-
-
-cm = confusion_matrix(y_test, rel)
-print("No. of Actual Legitimate & Predicted as Legitimate emails: ",cm[0][0])
-print("No. of Actual Legitimate & Predicted as Fraud emails: ",cm[0][1])
-print("No. of Actual Fraud & Predicted  as Legitimate emails: ",cm[1][0])
-print("No. of Actual Fraud & Predicted as Fraud emails: ",cm[1][1])
-
-
-# In[ ]:
-
-
-examples = str(input("Enter the email to classify:"))
-egs=preprocess(examples)
-example=[egs]
-rels=clf.predict(example)
-if rels=='1':
-    print("\n\nThe given email is predicted to be Fraud.")
-else:
-    print("\n\nThe given email is predicted to be Legitimate.")
-'''
 
 # In[ ]:
 
