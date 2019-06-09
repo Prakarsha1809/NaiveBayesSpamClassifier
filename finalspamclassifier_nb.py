@@ -3,7 +3,7 @@
 
 # In[ ]:
 
-#prerequisites: download pyprind, pandas, numpy, nltk, scikit learn, tkinter
+
 import pyprind
 import pandas as pd
 import os
